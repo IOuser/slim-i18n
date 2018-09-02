@@ -1,4 +1,5 @@
 export interface ITranslationsAdapter {
+    readonly languageCode?: string;
     readonly language?: string;
     gettext(key: string): string;
     // TODO: Add support for plural strings and context
