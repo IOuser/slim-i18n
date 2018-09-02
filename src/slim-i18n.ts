@@ -3,7 +3,7 @@ import { IDestroyable } from './utils/idestroyable';
 import { ISubscription } from './utils/isubscription';
 import { AnyFunction } from './utils/function';
 
-export const enum TranslationsEvents {
+export enum TranslationsEvents {
     LanguageChanged = 'languageChanged',
     TranslationsChanged = 'translationsChanged',
 }
