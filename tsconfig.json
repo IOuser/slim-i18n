@@ -1,0 +1,35 @@
+{
+    "compilerOptions": {
+        "declaration": true,
+        "sourceMap": false,
+        "strict": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noFallthroughCasesInSwitch": true,
+        "allowSyntheticDefaultImports": true,
+        "moduleResolution": "node",
+        "jsx": "react",
+        "target": "es5",
+        "module": "esnext",
+        "noEmitHelpers": true,
+        "importHelpers": true,
+        "downlevelIteration": true,
+        "pretty": true,
+        "outDir": "lib",
+        "rootDir": "src",
+        "lib": [
+            "es5",
+            "es6",
+            "es2015",
+            "dom"
+        ],
+        "typeRoots": [
+            "src/definitions",
+            "node_modules/@types"
+        ]
+    },
+    "exclude": [
+        "lib/",
+        "src/**/*.spec.tsx",
+    ]
+}
