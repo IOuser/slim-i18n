@@ -1,6 +1,6 @@
 {
     "name": "slim-i18n",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Slim i18n lib + utils for react components",
     "author": "Igor Emets <ya.peren@yandex.ru>",
     "license": "WTFPL",
