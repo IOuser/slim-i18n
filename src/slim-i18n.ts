@@ -1,3 +1,4 @@
+import './utils/string-format';
 import { IDestroyable } from './utils/idestroyable';
 import { ISubscription } from './utils/isubscription';
 import { AnyFunction } from './utils/function';
