@@ -24,12 +24,11 @@
             "dom"
         ],
         "typeRoots": [
-            "src/definitions",
             "node_modules/@types"
         ]
     },
     "exclude": [
         "lib/",
-        "src/**/*.spec.tsx",
+        "src/**/*.spec.tsx"
     ]
 }
