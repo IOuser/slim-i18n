@@ -3,6 +3,7 @@ import { isString, isNumber, isRecord } from './strict-types';
 declare global {
     interface String {
         format(params: Record<string, string | number>): string;
+
         format(...arg: (string | number)[]): string;
     }
 }

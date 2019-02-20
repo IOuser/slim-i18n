@@ -1,7 +1,5 @@
 import './utils/string-format';
-import { IDestroyable } from './utils/idestroyable';
-import { ISubscription } from './utils/isubscription';
-import { AnyFunction } from './utils/function';
+import { IDestroyable, ISubscription, AnyFunction } from './interfaces';
 
 export enum TranslationsEvents {
     LanguageChanged = 'languageChanged',
@@ -10,7 +8,7 @@ export enum TranslationsEvents {
 
 export type Translations = Record<string, string>;
 
-export class SlimI18n implements IDestroyable, ISubscription<TranslationsEvents> {
+export default class SlimI18n implements IDestroyable, ISubscription<TranslationsEvents> {
     private _language: string = 'en-us';
     private _handlersMap: Map<TranslationsEvents, Set<AnyFunction>> = new Map();
     private _translationsMap: Map<string, Translations> = new Map();

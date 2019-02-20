@@ -1,8 +1,8 @@
 import React from 'react';
+import { ITranslationsAdapter } from './interfaces';
+import { defaultI18n } from './default-translations-adapter';
 
-import { ITranslationsAdapter } from './itranslations-adapter';
+const TranslationsContext = React.createContext<ITranslationsAdapter>(defaultI18n);
 
-export const {
-    Provider: TranslationsProvider,
-    Consumer: TranslationsConsumer,
-} = React.createContext<ITranslationsAdapter | null>(null);
+export default TranslationsContext;
+export const { Provider: TranslationsProvider, Consumer: TranslationsConsumer } = TranslationsContext;
