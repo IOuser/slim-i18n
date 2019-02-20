@@ -1,9 +1,7 @@
 # Slim React i18n
-Slim i18n library wrapper for React with React.Context syntax.
-
+Slim wrapper for i18n in React with flexible utils which can be used with any i18n library.
 
 ## Install
-
 ```bash
 npm install slim-i18n
 // or
@@ -11,36 +9,57 @@ yarn add slim-i18n
 
 ```
 
-## Example
+## Usage
 
 ```jsx harmony
-// In index.jsx
-
+// init
 import { TranslationsProvider } from 'slim-i18n';
 import getTranslationAdapter from './get-translation-adapter';
-import MyApp from './app';
+import App from './app';
 
 const i18n = getTranslationAdapter();
 
 ReactDOM.render(
     <TranslationsProvider value={i18n}>
-        <MyApp />
+        <App />
     </TranslationsProvider>,
     document.getElementById('my-app')
 );
 ```
 
-
 ```jsx harmony
-// In app.jsx
-
+// with hook
 import { useI18n } from 'slim-i18n';
 
-export default function app() {
+export default function App() {
     const i18n = useI18n();
-    
+
     return (
         <div>{i18n.gettext('Hello World! I can be multi language!')}</div>
+    );
+}
+```
+
+```jsx harmony
+// with HOC
+import { withTranslations } from 'slim-i18n';
+
+export default withTranslations(({ i18n }) => (
+    <div>{i18n.gettext('Hello World! I can be multi language!')}</div>
+));
+```
+
+```jsx harmony
+// with Translation component
+import { Translation } from 'slim-i18n';
+
+export default function App() {
+    return (
+        <Translation>
+            {({ i18n }) => (
+                <div>{i18n.gettext('Hello World! I can be multi language!')}</div>
+            )}
+        </Translation>
     );
 }
 ```
