@@ -1,8 +1,8 @@
 import React, { ComponentType } from 'react';
 import { setDisplayName, wrapDisplayName } from 'recompose';
+
 import { ITranslationsAdapter } from './interfaces';
 import { TranslationsConsumer } from './translations-context';
-
 
 type Diff<T, U> = Pick<T, Exclude<keyof T, keyof U>>;
 type Omit<T, K> = Pick<T, keyof Diff<T, K>>;
@@ -26,9 +26,7 @@ export function withTranslations<P extends WithTranslationsProps>(
     );
 
     if (process.env.NODE_ENV !== 'production') {
-        return setDisplayName<ResultProps>(
-            wrapDisplayName(BaseComponent, 'withTranslations'),
-        )(WithTranslations);
+        return setDisplayName<ResultProps>(wrapDisplayName(BaseComponent, 'withTranslations'))(WithTranslations);
     }
 
     return WithTranslations;
